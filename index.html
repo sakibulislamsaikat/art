@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="imege/x-icon" href="saikat.png">
+    <link rel="icon" type="image/png" href="saikat.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art-Sakibul Islam saikat</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -344,16 +344,94 @@
                 font-size: 3rem;
             }
         }
+        
+        .highlight-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+        }
+        
+        .recent-work-card {
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+        
+        .recent-work-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 16px 32px rgba(59, 130, 246, 0.25);
+        }
+        
+        .about-photo-frame {
+            border-radius: 1.25rem;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(59, 130, 246, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        
+        .about-photo-frame:hover {
+            transform: scale(1.02);
+            box-shadow: 0 28px 56px -12px rgba(59, 130, 246, 0.25), 0 0 0 1px rgba(59, 130, 246, 0.35);
+        }
+        
+        .skill-pill {
+            display: inline-block;
+            padding: 0.4rem 0.9rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background: rgba(59, 130, 246, 0.15);
+            color: #93c5fd;
+            border: 1px solid rgba(59, 130, 246, 0.35);
+            transition: background 0.25s ease, transform 0.25s ease;
+        }
+        
+        .skill-pill:hover {
+            background: rgba(59, 130, 246, 0.28);
+            transform: translateY(-2px);
+        }
+        
+        .form-input-error {
+            border-color: #f87171 !important;
+            box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.2);
+        }
+        
+        .form-error-msg {
+            color: #fca5a5;
+            font-size: 0.8rem;
+            margin-top: 0.35rem;
+        }
+        
+        .load-more-btn {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        
+        .load-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(59, 130, 246, 0.35);
+        }
+        
+        .social-icon-btn {
+            transition: transform 0.25s ease, background-color 0.25s ease;
+        }
+        
+        .social-icon-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
     </style>
 </head>
 <body>
-
+    <div id="scrollIndicator" class="scroll-indicator" aria-hidden="true"></div>
     
     <!-- Navigation -->
     <nav class="fixed top-4 left-4 right-4 z-50 bg-black bg-opacity-30 backdrop-blur-lg border border-blue-500 border-opacity-20 rounded-3xl shadow-lg shadow-blue-500/20">
         <div class="container mx-auto px-4 sm:px-6 py-4">
-            <div class="flex justify-between it ems-center">
-                <div class="text-xl sm:text-2xl font-bold blue-gradient bg-clip-text text-transparent">
+            <div class="flex justify-between items-center">
+                <div class="text-lg sm:text-xl font-bold blue-gradient bg-clip-text text-transparent">
                  ART
                 </div>
                 <div class="hidden md:flex space-x-8">
@@ -369,14 +447,14 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                         </svg>
                     </a>
-                    <a href="#" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 flex flex-col items-center" onclick="showPage('home')">
-                        <span>Not yet</span>
+                    <a href="#" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 flex flex-col items-center" onclick="showPage('about')">
+                        <span>About Me</span>
                         <svg class="nav-icon about-icon w-4 h-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                         </svg>
                     </a>
-                    <a href="#" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 flex flex-col items-center" onclick="showPage('home')">
-                        <span>Not yet</span>
+                    <a href="#" class="nav-item px-4 py-2 rounded-lg transition-all duration-300 flex flex-col items-center" onclick="showPage('contact')">
+                        <span>Contact</span>
                         <svg class="nav-icon contact-icon w-4 h-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                         </svg>
@@ -415,19 +493,19 @@
                             <span class="font-medium text-lg">Gallery</span>
                         </div>
                           </a>
-                    <a href="#" class="mobile-nav-item flex items-center justify-between px-6 py-4 rounded-xl text-white hover:bg-blue-500 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105 active:scale-95" onclick="showPage('home'); toggleMobileMenu()">
+                    <a href="#" class="mobile-nav-item flex items-center justify-between px-6 py-4 rounded-xl text-white hover:bg-blue-500 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105 active:scale-95" onclick="showPage('about'); toggleMobileMenu()">
                         <div class="flex items-center space-x-3">
                             <svg class="mobile-nav-icon about-icon w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                            </svg>  <span class="font-medium text-lg">Not yet </span>
+                            </svg>  <span class="font-medium text-lg">About Me</span>
                         </div>
                     </a>
-                    <a href="#" class="mobile-nav-item flex items-center justify-between px-6 py-4 rounded-xl text-white hover:bg-blue-500 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105 active:scale-95" onclick="showPage('home'); toggleMobileMenu()">
+                    <a href="#" class="mobile-nav-item flex items-center justify-between px-6 py-4 rounded-xl text-white hover:bg-blue-500 hover:bg-opacity-30 transition-all duration-300 transform hover:scale-105 active:scale-95" onclick="showPage('contact'); toggleMobileMenu()">
                         <div class="flex items-center space-x-3">
                             <svg class="mobile-nav-icon contact-icon w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
-                            <span class="font-medium text-lg">Not yet </span>
+                            <span class="font-medium text-lg">Contact</span>
                         </div>
                     </a>
                   
@@ -438,26 +516,112 @@
 
     <!-- Home Page -->
     <div id="home" class="page active">
-        <div class="min-h-screen flex items-center justify-center pt-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center">
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-12 leading-tight">
+        <div class="min-h-screen flex items-center justify-center pt-24 pb-20">
+            <div class="container mx-auto px-6 w-full">
+                <div class="text-center mb-16 md:mb-20 fade-in-up">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-5 sm:mb-6 leading-tight">
                         <span class="blue-gradient bg-clip-text text-transparent">Sakibul Islam Saikat</span>
                         <br>
                         <span class="text-white">ART</span>
                     </h1>
-                    <div class="flex flex-col sm:flex-row justify-center gap-6">
-                        <button onclick="showPage('gallery')" class="blue-gradient px-8 py-4 rounded-full font-semibold text-white hover:shadow-lg transform hover:scale-105 transition-all duration-300 pulse-glow text-lg">
-                           Art Gallery
+                    <p class="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base mb-8 sm:mb-10">
+                        portraits, sketches, and football-inspired artwork — crafted with detail and passion.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-5 sm:gap-6">
+                        <button type="button" onclick="showPage('gallery')" class="blue-gradient px-7 py-3 sm:px-8 sm:py-3.5 rounded-full font-semibold text-white hover:shadow-lg transform hover:scale-105 transition-all duration-300 pulse-glow text-base">
+                            Art Gallery
                         </button>
-                       <button 
-                        onclick="window.location.href='https://sakibulislamsaikat.github.io/com/'" 
-                         class="border-2 border-blue-500 px-8 py-4 rounded-full font-semibold text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 text-lg">
-                         Portfolio
+                        <button type="button" onclick="window.location.href='https://sakibulislamsaikat.github.io/com/'" class="border-2 border-blue-500 px-7 py-3 sm:px-8 sm:py-3.5 rounded-full font-semibold text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 text-base">
+                            Portfolio
                         </button>
-
                     </div>
                 </div>
+
+                <!-- Highlights -->
+                <section class="mb-20 md:mb-28" aria-labelledby="highlights-heading">
+                    <h2 id="highlights-heading" class="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-3 sm:mb-4">
+                        <span class="blue-gradient bg-clip-text text-transparent">Highlights</span>
+                    </h2>
+                    <p class="text-center text-gray-400 max-w-xl mx-auto mb-8 sm:mb-10 text-xs sm:text-sm">
+                        A quick snapshot of what defines this portfolio — quality, range, and creative energy.
+                    </p>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                        <div class="highlight-card rounded-2xl p-8 text-center">
+                            <div class="text-3xl font-bold blue-gradient bg-clip-text text-transparent mb-2">40+</div>
+                            <h3 class="text-base font-semibold text-white mb-2">Artworks</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Sketches, bordered pieces, and black &amp; white studies in one growing gallery.</p>
+                        </div>
+                        <div class="highlight-card rounded-2xl p-8 text-center">
+                            <div class="text-3xl font-bold blue-gradient bg-clip-text text-transparent mb-2">Mixed</div>
+                            <h3 class="text-base font-semibold text-white mb-2">Styles &amp; mediums</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">From pencil feel to bold digital finishes — filter the gallery to match your taste.</p>
+                        </div>
+                        <div class="highlight-card rounded-2xl p-8 text-center sm:col-span-2 lg:col-span-1">
+                            <div class="text-3xl font-bold blue-gradient bg-clip-text text-transparent mb-2">Open</div>
+                            <h3 class="text-base font-semibold text-white mb-2">Collaboration</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Interested in a commission or feature? Reach out via the Contact section.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent work -->
+                <section class="pb-8" aria-labelledby="recent-work-heading">
+                    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+                        <div>
+                            <h2 id="recent-work-heading" class="text-xl sm:text-2xl md:text-3xl font-bold">
+                                <span class="blue-gradient bg-clip-text text-transparent">Recent work</span>
+                            </h2>
+                            <p class="text-gray-400 mt-2 text-xs sm:text-sm max-w-lg">Latest pieces from the studio — tap to view full size in the gallery lightbox.</p>
+                        </div>
+                        <button type="button" onclick="showPage('gallery')" class="self-start sm:self-auto text-blue-400 hover:text-blue-300 font-medium text-xs sm:text-sm transition-colors border border-blue-500/40 hover:border-blue-400 rounded-full px-4 py-1.5 sm:px-5 sm:py-2">
+                            View full gallery →
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <article class="recent-work-card bg-gray-800/80 rounded-xl overflow-hidden border border-blue-500/10 cursor-pointer" onclick="openLightbox('fmessi-s.jpg')">
+                            <img src="11s.jpg" alt="Leo Messi portrait" class="w-full h-52 object-cover object-top">
+                            <div class="p-5">
+                                <h3 class="font-semibold text-blue-400">Leo Messi</h3>
+                                <p class="text-gray-400 text-sm mt-1">Recent sketch — the GOAT in focus.</p>
+                            </div>
+                        </article>
+                        <article class="recent-work-card bg-gray-800/80 rounded-xl overflow-hidden border border-blue-500/10 cursor-pointer" onclick="openLightbox('lamine-s.jpg')">
+                            <img src="10s.png" alt="Lamine Yamal portrait" class="w-full h-52 object-cover object-top">
+                            <div class="p-5">
+                                <h3 class="font-semibold text-blue-400">Lamine Yamal</h3>
+                                <p class="text-gray-400 text-sm mt-1">Young talent, bold lines.</p>
+                            </div>
+                        </article>
+                        <article class="recent-work-card bg-gray-800/80 rounded-xl overflow-hidden border border-blue-500/10 cursor-pointer sm:col-span-2 lg:col-span-1" onclick="openLightbox('pedri-s.jpg')">
+                            <img src="9s.png" alt="Pedri portrait" class="w-full h-52 object-cover object-top">
+                            <div class="p-5">
+                                <h3 class="font-semibold text-blue-400">Pedri</h3>
+                                <p class="text-gray-400 text-sm mt-1">Midfield magic on paper.</p>
+                            </div>
+                        </article>
+                        <article class="recent-work-card bg-gray-800/80 rounded-xl overflow-hidden border border-blue-500/10 cursor-pointer" onclick="openLightbox('Jude-b.jpg')">
+                            <img src="13b.png" alt="Jude Bellingham portrait" class="w-full h-52 object-cover object-top">
+                            <div class="p-5">
+                                <h3 class="font-semibold text-blue-400">Jude Bellingham</h3>
+                                <p class="text-gray-400 text-sm mt-1">Border style, recent finish.</p>
+                            </div>
+                        </article>
+                        <article class="recent-work-card bg-gray-800/80 rounded-xl overflow-hidden border border-blue-500/10 cursor-pointer" onclick="openLightbox('messi-s.jpg')">
+                            <img src="8s.png" alt="Lionel Messi portrait" class="w-full h-52 object-cover object-top">
+                            <div class="p-5">
+                                <h3 class="font-semibold text-blue-400">Hamza Choudhury</h3>
+                                <p class="text-gray-400 text-sm mt-1">Classic Bangladeshi GOAT.</p>
+                            </div>
+                        </article>
+                        <article class="recent-work-card bg-gray-800/80 rounded-xl overflow-hidden border border-blue-500/10 cursor-pointer" onclick="openLightbox('duea.jpg')">
+                            <img src="1s.png" alt="Désiré Doué portrait" class="w-full h-52 object-cover object-top">
+                            <div class="p-5">
+                                <h3 class="font-semibold text-blue-400">Désiré Doué</h3>
+                                <p class="text-gray-400 text-sm mt-1">Rising star, fresh sketch.</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
@@ -477,16 +641,16 @@
                 
                 <!-- Filter Buttons -->
                 <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12 px-4">
-                    <button onclick="filterGallery('all')" class="filter-btn active px-3 sm:px-6 py-2 rounded-full border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 text-xs sm:text-sm">
+                    <button type="button" onclick="filterGallery('all', this)" class="filter-btn active px-3 sm:px-6 py-2 rounded-full border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 text-xs sm:text-sm">
                         All
                     </button>
-                    <button onclick="filterGallery('sketch')" class="filter-btn px-3 sm:px-6 py-2 rounded-full border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 text-xs sm:text-sm">
+                    <button type="button" onclick="filterGallery('sketch', this)" class="filter-btn px-3 sm:px-6 py-2 rounded-full border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 text-xs sm:text-sm">
                         Sketch
                     </button>
-                    <button onclick="filterGallery('blackwhite')" class="filter-btn px-3 sm:px-6 py-2 rounded-full border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 text-xs sm:text-sm">
+                    <button type="button" onclick="filterGallery('blackwhite', this)" class="filter-btn px-3 sm:px-6 py-2 rounded-full border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 text-xs sm:text-sm">
                         Black & White
                     </button>
-                    <button onclick="filterGallery('border')" class="filter-btn px-3 sm:px-6 py-2 rounded-full border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 text-xs sm:text-sm">
+                    <button type="button" onclick="filterGallery('border', this)" class="filter-btn px-3 sm:px-6 py-2 rounded-full border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all duration-300 text-xs sm:text-sm">
                         Border
                     </button>
                 </div>
@@ -900,53 +1064,74 @@
 
 
 
+                </div>
+                <div id="galleryLoadMoreWrap" class="text-center mt-12 mb-4" style="display: none;">
+                    <button type="button" id="galleryLoadMoreBtn" onclick="loadMoreGallery()" class="load-more-btn px-10 py-3 rounded-full font-semibold text-white blue-gradient border-0 cursor-pointer text-sm sm:text-base">
+                        Load more
+                    </button>
+                   
+                </div>
             </div>
         </div>
     </div>
 
     <!-- About Page -->
     <div id="about" class="page">
-        <div class="min-h-full pt-28 pb-12">
+        <div class="min-h-full pt-28 pb-16">
             <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto">
-                    <div class="text-center mb-12 fade-in-up">
-                        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 leading-tight">
+                <div class="max-w-5xl mx-auto">
+                    <header class="text-center mb-14 fade-in-up">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 leading-tight">
                             <span class="blue-gradient bg-clip-text text-transparent">About Me</span>
                         </h2>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div class="slide-in-left">
-                            <div class="w-80 h-80 mx-auto bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center text-8xl mb-8">
-                                👨‍🎨
+                       
+                    </header>
+
+                    <div class="flex flex-col md:flex-row md:items-start gap-10 md:gap-14 lg:gap-16">
+                        <div class="w-full md:w-[42%] flex-shrink-0 slide-in-left">
+                            <div class="about-photo-frame max-w-sm mx-auto md:mx-0 aspect-square bg-gray-900">
+                                <img src="saikat.jpg" alt="Sakibul Islam Saikat — profile photo" class="w-full h-full object-cover">
                             </div>
                         </div>
-                        
-                        <div class="slide-in-right">
-                            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-blue-400">Creative Journey</h3>
-                            <p class="text-sm sm:text-base md:text-lg text-gray-300 mb-6 leading-relaxed">
-                                Hello! I'm Sakibul Islam Saikat, a passionate digital artist with over 5 years of experience in creating stunning visual narratives. My work spans across various mediums, from digital illustrations to abstract compositions.
-                            </p>
-                            <p class="text-sm sm:text-base md:text-lg text-gray-300 mb-6 leading-relaxed">
-                                I believe art is a universal language that transcends boundaries and connects souls. Each piece I create is infused with emotion, story, and a piece of my heart.
-                            </p>
-                            
-                            <div class="space-y-4">
-                                <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-xl">🎯</div>
-                                    <div>
-                                        <h4 class="font-semibold text-blue-400">Mission</h4>
-                                        <p class="text-gray-300">To inspire and evoke emotions through visual storytelling</p>
-                                    </div>
-                                </div>
+                        <div class="flex-1 slide-in-right space-y-8">
+                            <div>
+                                <h3 class="text-xl sm:text-2xl font-bold text-white mb-4">Hello, I'm an Artist, Web Developer and student</h3>
+                                <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-4">
+                                    I&apos;m a developer who is passionate about <strong class="text-blue-400 font-semibold">coding</strong>, <strong class="text-blue-400 font-semibold">learning new technologies</strong>, and <strong class="text-blue-400 font-semibold">building useful projects</strong> that people actually enjoy using. I care about clear structure, responsive layouts, and writing code that is easy to maintain.
+                                </p>
+                                <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                                  I know Web Developer and Graphic Designer very well but not like professional.I'm a passionate and dedicated creative professional with a deep love for vibrant designs, artistic expression, and innovative digital solutions. Throughout my journey in the creative world, I've experienced countless colorful moments, inspiring collaborations, and exciting challenges that continue to shape my craft and vision. 
+                                </p>
                                 
-                                <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-xl">💡</div>
-                                    <div>
-                                        <h4 class="font-semibold text-blue-400">Vision</h4>
-                                        <p class="text-gray-300">Creating art that bridges the gap between dreams and reality</p>
-                                    </div>
+                            </div>
+
+                            <div>
+                                <h4 class="text-lg font-semibold text-blue-400 mb-4">Skills</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="skill-pill">HTML</span>
+                                    <span class="skill-pill">CSS</span>
+                                    <span class="skill-pill">JavaScript</span>
+                                    <span class="skill-pill">Skatch</span>
+                                    <span class="skill-pill">Grafix design</span>
                                 </div>
+                            </div>
+
+                            <div class="rounded-2xl border border-blue-500/20 bg-gray-900/50 p-6 backdrop-blur-sm">
+                                <h4 class="text-lg font-semibold text-blue-400 mb-4">Quick info</h4>
+                                <dl class="grid gap-4 sm:grid-cols-2 text-sm sm:text-base">
+                                    <div>
+                                        <dt class="text-gray-500 text-xs uppercase tracking-wide mb-1">Location</dt>
+                                        <dd class="text-gray-200">Barishal, Bangladesh</dd>
+                                    </div>
+                                    <div>
+                                        <dt class="text-gray-500 text-xs uppercase tracking-wide mb-1">Experience</dt>
+                                        <dd class="text-gray-200">Building web projects &amp; learning continuously</dd>
+                                    </div>
+                                    <div class="sm:col-span-2">
+                                        <dt class="text-gray-500 text-xs uppercase tracking-wide mb-1">Interests</dt>
+                                        <dd class="text-gray-200">Frontend development, UI polish, open source, art</dd>
+                                    </div>
+                                </dl>
                             </div>
                         </div>
                     </div>
@@ -957,99 +1142,102 @@
 
     <!-- Contact Page -->
     <div id="contact" class="page">
-        <div class="min-h-full pt-28 pb-12">
+        <div class="min-h-full pt-28 pb-16">
             <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto">
-                    <div class="text-center mb-12 fade-in-up">
-                        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-4 leading-tight">
-                            <span class="blue-gradient bg-clip-text text-transparent">Get In Touch</span>
+                <div class="max-w-5xl mx-auto">
+                    <header class="text-center mb-14 fade-in-up">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 leading-tight">
+                            <span class="blue-gradient bg-clip-text text-transparent">Contact</span>
                         </h2>
-                        <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 px-4">
-                            Let's collaborate and create something amazing together!
+                        <p class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">
+                            Have a question, commission idea, or collaboration in mind? Send a message — I&apos;ll get back to you.
                         </p>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-12">
-                        <div class="slide-in-left">
-                            <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-6 text-blue-400">Contact Information</h3>
-                            
-                            <div class="space-y-6">
-                                <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-xl">📧</div>
-                                    <div>
-                                        <h4 class="font-semibold text-blue-400">Email</h4>
-                                        <p class="text-gray-300">saikat.artist@email.com</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-xl">📱</div>
-                                    <div>
-                                        <h4 class="font-semibold text-blue-400">Phone</h4>
-                                        <p class="text-gray-300">+880 123 456 789</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-center space-x-4">
-                                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-xl">📍</div>
-                                    <div>
-                                        <h4 class="font-semibold text-blue-400">Location</h4>
-                                        <p class="text-gray-300">Dhaka, Bangladesh</p>
-                                    </div>
-                                </div>
+                    </header>
+
+                    <div class="grid lg:grid-cols-5 gap-12 lg:gap-14">
+                        <aside class="lg:col-span-2 slide-in-left space-y-8">
+                            <div>
+                                <h3 class="text-lg font-bold text-blue-400 mb-6">Contact information</h3>
+                                <ul class="space-y-5 text-sm sm:text-base">
+                                    <li class="flex gap-4">
+                                        <span class="w-11 h-11 shrink-0 rounded-full bg-blue-500/20 flex items-center justify-center text-lg" aria-hidden="true">📧</span>
+                                        <div>
+                                            <p class="text-blue-400 font-semibold text-sm">Email</p>
+                                            <a href="mailto:sakibulislamsaikat2005@gmail.com" class="text-gray-300 hover:text-white transition-colors break-all">sakibulislamsaikat2005@gmail.com</a>
+                                        </div>
+                                    </li>
+                                    <li class="flex gap-4">
+                                        <span class="w-11 h-11 shrink-0 rounded-full bg-blue-500/20 flex items-center justify-center text-lg" aria-hidden="true">📱</span>
+                                        <div>
+                                            <p class="text-blue-400 font-semibold text-sm">Phone</p>
+                                            <a href="tel:+880123456789" class="text-gray-300 hover:text-white transition-colors">+880 1780-434211</a>
+                                        </div>
+                                    </li>
+                                    <li class="flex gap-4">
+                                        <span class="w-11 h-11 shrink-0 rounded-full bg-blue-500/20 flex items-center justify-center text-lg" aria-hidden="true">📍</span>
+                                        <div>
+                                            <p class="text-blue-400 font-semibold text-sm">Location</p>
+                                            <p class="text-gray-300">Barishal, Bangladesh</p>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
-                            
-                            <div class="mt-8">
-                                <h4 class="text-xl font-semibold mb-4 text-blue-400">Follow Me</h4>
-                                <div class="flex space-x-4">
-                                    <a href="#" title="Facebook" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110">
-                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                                        </svg>
-                                    </a>
-                                    <a href="#" title="GitHub" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-all duration-300 transform hover:scale-110">
-                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <div>
+                                <h4 class="text-base font-semibold text-blue-400 mb-4">Social</h4>
+                                <div class="flex flex-wrap gap-3">
+                                    <a href="https://github.comhttps//github.com/sakibulislamsaikat" target="_blank" rel="noopener noreferrer" title="GitHub" class="social-icon-btn w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-700 border border-gray-700">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                         </svg>
                                     </a>
-                                    <a href="#" title="X (Twitter)" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-black transition-all duration-300 transform hover:scale-110">
-                                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                    <a href="https://www.facebook.com/sakibul.islam.saikat.2024" target="_blank" rel="noopener noreferrer" title="Facebook" class="social-icon-btn w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-blue-600 border border-gray-700">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                                         </svg>
                                     </a>
-                                    <a href="#" title="Instagram" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 transition-all duration-300 transform hover:scale-110">
-                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <a href="https://www.youtube.com/@saikatlive7" target="_blank" rel="noopener noreferrer" title="YouTube" class="social-icon-btn w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-red-600 border border-gray-700">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://www.instagram.com/sakibulislamsaikat7/" target="_blank" rel="noopener noreferrer" title="Instagram" class="social-icon-btn w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 border border-gray-700">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                        </svg>
+                                    </a>
+                                    <a href="https://x.com/sakibulislam205" target="_blank" rel="noopener noreferrer" title="Twitter / X" class="social-icon-btn w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-neutral-900 border border-gray-700">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                                         </svg>
                                     </a>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="slide-in-right">
-                            <form class="space-y-6" onsubmit="handleContactForm(event)">
+                        </aside>
+
+                        <div class="lg:col-span-3 slide-in-right">
+                            <form id="contactForm" class="space-y-5 rounded-2xl border border-blue-500/15 bg-gray-900/40 p-6 sm:p-8 backdrop-blur-sm" novalidate onsubmit="handleContactForm(event)">
                                 <div>
-                            x        <label class="block text-blue-400 font-semibold mb-2">Name</label>
-                                    <input type="text" name="name" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-blue-500 focus:outline-none text-white transition-all duration-300">
+                                    <label for="contactName" class="block text-blue-400 font-semibold mb-2 text-sm">Name <span class="text-red-400">*</span></label>
+                                    <input id="contactName" type="text" name="name" autocomplete="name" required minlength="2" maxlength="120" class="contact-field w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-blue-500 focus:outline-none text-white transition-all duration-300" aria-describedby="err-name">
+                                    <p id="err-name" class="form-error-msg hidden" role="alert"></p>
                                 </div>
-                                
                                 <div>
-                                    <label class="block text-blue-400 font-semibold mb-2">Email</label>
-                                    <input type="email" name="email" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-blue-500 focus:outline-none text-white transition-all duration-300">
+                                    <label for="contactEmail" class="block text-blue-400 font-semibold mb-2 text-sm">Email <span class="text-red-400">*</span></label>
+                                    <input id="contactEmail" type="email" name="email" autocomplete="email" required class="contact-field w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-blue-500 focus:outline-none text-white transition-all duration-300" aria-describedby="err-email">
+                                    <p id="err-email" class="form-error-msg hidden" role="alert"></p>
                                 </div>
-                                
                                 <div>
-                                    <label class="block text-blue-400 font-semibold mb-2">Subject</label>
-                                    <input type="text" name="subject" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-blue-500 focus:outline-none text-white transition-all duration-300">
+                                    <label for="contactSubject" class="block text-blue-400 font-semibold mb-2 text-sm">Subject <span class="text-red-400">*</span></label>
+                                    <input id="contactSubject" type="text" name="subject" required minlength="2" maxlength="200" class="contact-field w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-blue-500 focus:outline-none text-white transition-all duration-300" aria-describedby="err-subject">
+                                    <p id="err-subject" class="form-error-msg hidden" role="alert"></p>
                                 </div>
-                                
                                 <div>
-                                    <label class="block text-blue-400 font-semibold mb-2">Message</label>
-                                    <textarea rows="5" name="message" required class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-blue-500 focus:outline-none text-white transition-all duration-300 resize-none"></textarea>
+                                    <label for="contactMessage" class="block text-blue-400 font-semibold mb-2 text-sm">Message <span class="text-red-400">*</span></label>
+                                    <textarea id="contactMessage" rows="5" name="message" required minlength="10" maxlength="4000" class="contact-field w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:border-blue-500 focus:outline-none text-white transition-all duration-300 resize-y min-h-[120px]" aria-describedby="err-message"></textarea>
+                                    <p id="err-message" class="form-error-msg hidden" role="alert"></p>
                                 </div>
-                                
-                                <button type="submit" class="w-full blue-gradient py-3 rounded-lg font-semibold text-white hover:shadow-lg transform hover:scale-105 transition-all duration-300 pulse-glow">
-                                    Send Message
+                                <button type="submit" id="contactSubmitBtn" class="w-full blue-gradient py-3.5 rounded-xl font-semibold text-white load-more-btn border-0 cursor-pointer">
+                                    Send message
                                 </button>
                             </form>
                         </div>
@@ -1068,19 +1256,61 @@
 
 
     <script>
+        var currentGalleryFilter = 'all';
+        var galleryVisibleLimit = 9;
+
+        function getGalleryCards() {
+            return document.querySelectorAll('#galleryGrid .art-card');
+        }
+
+        function applyGalleryPagination() {
+            var category = currentGalleryFilter || 'all';
+            var cards = getGalleryCards();
+            var matching = [];
+            for (var i = 0; i < cards.length; i++) {
+                var card = cards[i];
+                var matches = category === 'all' || card.classList.contains(category);
+                if (matches) matching.push(card);
+            }
+            var shown = 0;
+            for (var j = 0; j < cards.length; j++) {
+                var c = cards[j];
+                var ok = category === 'all' || c.classList.contains(category);
+                if (!ok) {
+                    c.style.display = 'none';
+                    continue;
+                }
+                if (shown < galleryVisibleLimit) {
+                    c.style.display = 'block';
+                    c.style.animation = 'fadeInUp 0.5s ease-out';
+                    shown++;
+                } else {
+                    c.style.display = 'none';
+                }
+            }
+            var wrap = document.getElementById('galleryLoadMoreWrap');
+            if (wrap) {
+                wrap.style.display = matching.length > galleryVisibleLimit ? 'block' : 'none';
+            }
+        }
+
+        function loadMoreGallery() {
+            galleryVisibleLimit += 9;
+            applyGalleryPagination();
+        }
+
         // Page navigation
         function showPage(pageId) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => {
+            var pages = document.querySelectorAll('.page');
+            pages.forEach(function(page) {
                 page.classList.remove('active');
             });
-            
-            // Show selected page
             document.getElementById(pageId).classList.add('active');
-            
-            // Update scroll indicator
+            if (pageId === 'gallery') {
+                applyGalleryPagination();
+            }
             updateScrollIndicator();
+            window.scrollTo(0, 0);
         }
 
         // Mobile menu toggle
@@ -1101,24 +1331,18 @@
             }
         });
 
-        // Gallery filter
-        function filterGallery(category) {
-            const cards = document.querySelectorAll('.art-card');
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            
-            // Update active filter button
-            filterBtns.forEach(btn => btn.classList.remove('active', 'bg-blue-500', 'text-white'));
-            event.target.classList.add('active', 'bg-blue-500', 'text-white');
-            
-            // Filter cards
-            cards.forEach(card => {
-                if (category === 'all' || card.classList.contains(category)) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeInUp 0.5s ease-out';
-                } else {
-                    card.style.display = 'none';
-                }
+        // Gallery filter + pagination
+        function filterGallery(category, btn) {
+            currentGalleryFilter = category;
+            galleryVisibleLimit = 9;
+            var filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(function(b) {
+                b.classList.remove('active', 'bg-blue-500', 'text-white');
             });
+            if (btn) {
+                btn.classList.add('active', 'bg-blue-500', 'text-white');
+            }
+            applyGalleryPagination();
         }
 
         // Lightbox functionality
@@ -1142,35 +1366,80 @@
             document.body.style.overflow = 'auto';
         }
 
+        function clearContactErrors(form) {
+            ['name', 'email', 'subject', 'message'].forEach(function(field) {
+                var el = form.querySelector('[name="' + field + '"]');
+                var err = document.getElementById('err-' + field);
+                if (el) el.classList.remove('form-input-error');
+                if (err) {
+                    err.textContent = '';
+                    err.classList.add('hidden');
+                }
+            });
+        }
+
+        function setFieldError(fieldName, message) {
+            var el = document.querySelector('#contactForm [name="' + fieldName + '"]');
+            var err = document.getElementById('err-' + fieldName);
+            if (el) el.classList.add('form-input-error');
+            if (err) {
+                err.textContent = message;
+                err.classList.remove('hidden');
+            }
+        }
+
         // Contact form handler
         function handleContactForm(event) {
             event.preventDefault();
-            
-            // Show loading state
-            const submitBtn = event.target.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
+            var form = event.target;
+            clearContactErrors(form);
+
+            var nameEl = form.querySelector('[name="name"]');
+            var emailEl = form.querySelector('[name="email"]');
+            var subjectEl = form.querySelector('[name="subject"]');
+            var messageEl = form.querySelector('[name="message"]');
+            var name = nameEl ? nameEl.value.trim() : '';
+            var email = emailEl ? emailEl.value.trim() : '';
+            var subject = subjectEl ? subjectEl.value.trim() : '';
+            var message = messageEl ? messageEl.value.trim() : '';
+            var valid = true;
+
+            if (!name || name.length < 2) {
+                setFieldError('name', 'Please enter your name (at least 2 characters).');
+                valid = false;
+            }
+            if (!email) {
+                setFieldError('email', 'Email is required.');
+                valid = false;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                setFieldError('email', 'Please enter a valid email address.');
+                valid = false;
+            }
+            if (!subject || subject.length < 2) {
+                setFieldError('subject', 'Please add a subject.');
+                valid = false;
+            }
+            if (!message || message.length < 10) {
+                setFieldError('message', 'Please write a message (at least 10 characters).');
+                valid = false;
+            }
+
+            if (!valid) {
+                var firstInvalid = form.querySelector('.form-input-error');
+                if (firstInvalid) firstInvalid.focus();
+                return;
+            }
+
+            var submitBtn = form.querySelector('button[type="submit"]');
+            var originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<div class="loading-spinner"></div>';
             submitBtn.disabled = true;
-            
-            // Get form data
-            const formData = new FormData(event.target);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
-            
-            // Create mailto link
-            const mailtoLink = `mailto:sakibulislamsaikat2005@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-            
-            // Open email client
+
+            var mailtoLink = 'mailto:sakibulislamsaikat2005@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
             window.open(mailtoLink, '_blank');
-            
-            // Simulate form submission
-            setTimeout(() => {
-                // Reset form
-                event.target.reset();
-                
-                // Reset button
+
+            setTimeout(function() {
+                form.reset();
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             }, 1000);
@@ -1211,27 +1480,44 @@
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.filter-btn').forEach(function(b) {
+                if (b.classList.contains('active')) {
+                    b.classList.add('bg-blue-500', 'text-white');
+                }
+            });
+            applyGalleryPagination();
+
             updateScrollIndicator();
-            
-            // Add intersection observer for animations
-            const observerOptions = {
+
+            var observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             };
-            
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
                     }
                 });
             }, observerOptions);
-            
-            // Observe elements for animation
-            document.querySelectorAll('.art-card, .fade-in-up, .slide-in-left, .slide-in-right').forEach(el => {
+            document.querySelectorAll('.art-card, .fade-in-up, .slide-in-left, .slide-in-right').forEach(function(el) {
                 observer.observe(el);
             });
+
+            var contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.querySelectorAll('.contact-field').forEach(function(input) {
+                    input.addEventListener('input', function() {
+                        input.classList.remove('form-input-error');
+                        var err = document.getElementById('err-' + input.name);
+                        if (err) {
+                            err.textContent = '';
+                            err.classList.add('hidden');
+                        }
+                    });
+                });
+            }
         });
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98c7e64e83ed4ea6',t:'MTc2MDExNzk5My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
